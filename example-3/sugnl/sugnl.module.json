@@ -1,0 +1,22 @@
+{
+    "$schema": "../../.sitecore/schemas/ModuleFile.schema.json",
+    "namespace": "SugnlDemo",
+    "items": {
+        "includes": [
+            {
+                "name": "SugnlDemo",
+                "path": "/sitecore/system/Modules/PowerShell/Script Library/SugNL Demo",
+                "scope": "ItemAndChildren"
+            },
+            {
+                "name": "SugnlDemo - tasks",
+                "path": "/sitecore/system/Tasks/Schedules/shedule-1",
+                "scope": "singleItem"
+            },
+            {
+                "name": "RandomItems",
+                "path": "/sitecore/content/Home",                
+            }
+        ]
+    }
+}
