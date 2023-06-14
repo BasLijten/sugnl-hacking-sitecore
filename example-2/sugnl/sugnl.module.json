@@ -15,8 +15,7 @@
             },
             {
                 "name": "RandomItems",
-                "path": "/sitecore/content/Home",
-                "scope": "ItemAndChildren"
+                "path": "/sitecore/content/Home",                
             }
         ]
     }
