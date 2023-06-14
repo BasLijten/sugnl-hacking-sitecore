@@ -1,0 +1,19 @@
+{
+    "folders": [
+      {
+        "path": "example-1"
+      },
+      {
+        "path": "src"
+      },
+      {
+        "path": ".config"
+      },
+      {
+        "path": ".sitecore"
+      },
+      {
+        "path": ".vscode"
+      }
+    ]
+  }

@@ -1,5 +1,5 @@
 {
-  "$schema": "./.sitecore/schemas/RootConfigurationFile.schema.json",
+  "$schema": ".sitecore/schemas/RootConfigurationFile.schema.json",
   "modules": [
     "sugnl/*.module.json"
   ],
