@@ -1,0 +1,1 @@
+dotnet sitecore itemres create -o sugnl
