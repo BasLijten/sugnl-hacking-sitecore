@@ -12,6 +12,11 @@
                 "name": "SugnlDemo - tasks",
                 "path": "/sitecore/system/Tasks/Schedules/shedule-1",
                 "scope": "singleItem"
+            },
+            {
+                "name": "RandomItems",
+                "path": "/sitecore/content/Home",
+                "scope": "ItemAndChildren"
             }
         ]
     }
