@@ -48,9 +48,9 @@
         1. how could we compromise this one IF the user above checks everything?
         2. ```**example-3**```
            1. nuget approach with update
-              1. sitestep to installation.ps1 / init.ps1
+              1. sitestep to installation.ps1 / init.ps1 ???
                  1. vulnerable as well
-        3. create a package wich is ok -> deploy
+        3. create a package wich is ok -> include in platfrom
            1. prepare this demo, have it deployed!
         4. create a package which is not ok
         5. run renovate bot

@@ -1,0 +1,8 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFrameworks>netstandard2.0</TargetFrameworks>    
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="content\items.master.sugnl.dat" Pack="true" Visible="false" PackagePath="content\App_Data\items\master\items.master.sugnl.dat" />
+  </ItemGroup>  
+</Project>
