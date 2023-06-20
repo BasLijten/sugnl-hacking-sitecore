@@ -61,3 +61,13 @@ dotnet sitecore itemres create -o sugnl -i SugnlDemo
 dotnet sitecore itemres create -o sugnlfull
 ```
 
+```cmd
+# generate nuget package
+dotnet pack -c Netstandard20 -p:PackageVersion=1.0.2
+```
+
+```cmd
+# add nuget to local feed   
+C:\tools\nuget\nuget.exe add bin\Netstandard20\spe10.1.0.2.nupkg -Source C:\git\sugnl-hacking-sitecore\example-3\nugetfeed
+```
+
