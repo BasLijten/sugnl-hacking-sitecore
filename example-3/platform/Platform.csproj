@@ -44,6 +44,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="spe10, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\spe10.1.0.2\lib\netstandard2.0\spe10.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -58,6 +61,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Config\Include\taskscheduler.config" />
+    <Content Include="App_Data\items\master\items.master.sugnl.dat" />
+    <None Include="packages.config" />
     <None Include="Platform.wpp.targets" />
     <None Include="Properties\PublishProfiles\Local.pubxml" />
     <None Include="README.md" />
