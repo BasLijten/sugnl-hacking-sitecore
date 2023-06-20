@@ -1,5 +1,7 @@
 # Reverse Shell on own machine
 
+How a reverse shell on Sitecore powershell extensions works
+
 ```mermaid
 sequenceDiagram
     participant MD as Malicious Dev
@@ -9,7 +11,9 @@ sequenceDiagram
 
     MD ->> K: Open Netcat    
     activate  K
-        K ->> K: Listen on port 900x        
+         loop wait for connection
+            K ->> K: Listen on port 900x  
+        end
         MD ->> MDES: Login on Sitecore
         MD ->> MDES: Open PowerShell Extensions
         MD ->> MDES: Open Reverse Shell with Powershell extensions

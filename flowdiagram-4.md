@@ -1,19 +1,21 @@
 # Reverse Shell on production environment using nuget package upgrade
 
+The full scenario
+
 ```mermaid
 sequenceDiagram
     box Hackert
-    participant MD as Malicious Dev
-    participant K as Kali
+        participant MD as Malicious Dev
+        participant K as Kali
     end
-    participant P as Sitecore prod    
     participant LD as Lead Dev
-    
+    participant P as Sitecore prod    
+        
     box Github
-    participant G as Github  
-    participant N as Nuget
-    participant R as Renovate bot
-    participant CICD as CI//CD pipelines    
+        participant G as Github  
+        participant N as Nuget
+        participant CICD as CI//CD pipelines    
+        participant R as Renovate bot    
     end
 
     autonumber

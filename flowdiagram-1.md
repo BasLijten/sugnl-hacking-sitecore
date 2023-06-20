@@ -1,5 +1,7 @@
 # Reverse Shell 101
 
+Description of a standard reverse shell setup
+
 ```mermaid
 sequenceDiagram        
     participant MDET as Malicious Dev Env Terminal
@@ -8,7 +10,9 @@ sequenceDiagram
 
     MD ->> K: Open Netcat    
     activate  K
-        K ->> K: Listen on port 900x        
+        loop wait for connection
+            K ->> K: Listen on port 900x  
+        end      
         MD ->> MDET: open reverse Shell with Powershell
         activate MDET
             MDET ->> K: Connect

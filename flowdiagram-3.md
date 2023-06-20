@@ -1,13 +1,15 @@
 # Reverse Shell on Other Sitecore development machine
 
+trick your Lead dev into setting up a reverse shell for you
+
 ```mermaid
 sequenceDiagram
     participant MD as Malicious Dev    
     participant MDE as Malicions Dev Environment
     participant K as Kali      
-    participant LD as Lead Dev
-    participant LDE as Lead Dev
-    participant G as Github            
+    participant LD as Lead Dev    
+    participant P as Lead Dev Environment
+    participant G as Github                
     autonumber
     
     MD ->> MD: Create new branch
@@ -16,7 +18,9 @@ sequenceDiagram
     MD ->> G: Push branch    
     
     activate K    
-        K ->> K: Listen on port 900x  
+        loop wait for connection
+            K ->> K: Listen on port 900x  
+        end
         LD ->> G: Pull Code
         LD ->> P: Run environment
         LD ->> P: publish all items
