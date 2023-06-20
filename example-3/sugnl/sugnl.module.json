@@ -1,5 +1,5 @@
 {
-    "$schema": "../../.sitecore/schemas/ModuleFile.schema.json",
+    "$schema": "../.sitecore/schemas/ModuleFile.schema.json",
     "namespace": "SugnlDemo",
     "items": {
         "includes": [
@@ -15,7 +15,7 @@
             },
             {
                 "name": "RandomItems",
-                "path": "/sitecore/content/Home",                
+                "path": "/sitecore/content/Home"               
             }
         ]
     }
