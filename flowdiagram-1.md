@@ -5,7 +5,8 @@ Description of a standard reverse shell setup
 ```mermaid
 sequenceDiagram        
     participant MDET as Malicious Dev Env Terminal
-    participant K as Kali            
+    participant K as Kali     
+    participant MD as Malicious developer       
     autonumber
 
     MD ->> K: Open Netcat    

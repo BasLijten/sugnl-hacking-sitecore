@@ -6,7 +6,8 @@ How a reverse shell on Sitecore powershell extensions works
 sequenceDiagram
     participant MD as Malicious Dev
     participant MDES as Malicious Dev Env Sitecore    
-    participant K as Kali                
+    participant K as Kali       
+
     autonumber
 
     MD ->> K: Open Netcat    
@@ -23,8 +24,8 @@ sequenceDiagram
             note over K, MDES: Kali has control over Sitecore
             MD ->> K: 
             note over MD, MDES: Malicious Dev can execute commands from Kali on Sitecore!
-            Kali ->> MDES: execute commands
-            note over Kali, MDES: Kali can execute remotely powershell commands on Sitecore
+            K ->> MDES: execute commands
+            note over K, MDES: Kali can execute remotely powershell commands on Sitecore
         deactivate MDES
     deactivate K
 ```
